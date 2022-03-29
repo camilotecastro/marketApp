@@ -1,6 +1,9 @@
 package com.market.persistence.entity;
 
+import org.springframework.format.number.money.MonetaryAmountFormatter;
+
 import javax.persistence.*;
+import java.math.BigDecimal;
 
 @Entity
 @Table(name = "productos")
@@ -20,7 +23,7 @@ public class Producto {
     private String codigoBarras;
 
     @Column(name = "precio_venta")
-    private Double precioVenta;
+    private BigDecimal precioVenta;
 
     @Column(name = "cantidad_stock")
     private Long cantidadStock;
@@ -61,11 +64,11 @@ public class Producto {
         this.codigoBarras = codigoBarras;
     }
 
-    public Double getPrecioVenta() {
+    public BigDecimal getPrecioVenta() {
         return precioVenta;
     }
 
-    public void setPrecioVenta(Double precioVenta) {
+    public void setPrecioVenta(BigDecimal precioVenta) {
         this.precioVenta = precioVenta;
     }
 
